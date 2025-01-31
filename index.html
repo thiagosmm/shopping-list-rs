@@ -10,5 +10,40 @@
   <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Baloo+2:wght@400..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Leckerli+One&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 </head>
 <body>
+  <div class="main-container">
+    <div class="logo-top">
+      <img src="/icons/logo.png" alt="">
+    </div>
+  
+    <div class="back-button">
+      <p><- Voltar</p>
+    </div>
+    
+    <h1 id="title">Compras da semana</h1>
+
+      <form action="">
+        <input type="text" placeholder="Adicione um novo item" id="item">
+        <button type="submit">Adicionar item</button>
+      </form>
+
+      <ul class="list-items">
+
+        <li class="item">
+          <input type="checkbox" id="item1">
+          <p for="item1">Arroz</p>
+          <img class="trash-can-img" src="/icons/icon delete.png" alt="imagem de lixo para deletar item">
+        </li>
+
+        <li class="removed-item">
+          <img id="removed-img-1" src="/icons/warning-circle-filled.png" alt="ponto de exclamação">
+          <p>O item foi removido da lista</p>
+          <img id="removed-img-2" src="/icons/delete-small.png" alt="">
+        </li>
+
+      </ul>
+  </div>
+  <footer class="logo-bottom">
+    <img src="/icons/logo.png" alt="">
+  </footer>
 </body>
 </html>
