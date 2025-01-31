@@ -3,6 +3,10 @@
   width: 327px;
   margin-top: 78px;
 
+  .hidden {
+    display: none !important;
+  }
+
   .logo-top {
     display: none;
   }
