@@ -67,6 +67,7 @@
 
       &:hover {
         background: var(--color-brand-hover);
+        cursor: pointer;
       }
     }
   }
@@ -89,6 +90,9 @@
 
       input {
         margin-left: 0.75rem;
+        &:hover {
+          cursor: pointer;
+        }
       }
 
       p {
@@ -99,6 +103,9 @@
 
       img {
         margin-right: 0.75rem;
+        &:hover {
+          cursor: pointer;
+        }
       }
     }
 
@@ -125,6 +132,9 @@
 
       #removed-img-2 {
         margin-right: 0.75rem;
+        &:hover {
+          cursor: pointer;
+        }
       }
     }
   }
