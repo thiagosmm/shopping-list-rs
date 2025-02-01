@@ -34,19 +34,32 @@ form.onsubmit = (event) => {
   input.value = '';
 }
 
-//botão de remover item da lista e adiconar estilo de item removido
+//botão de remover item da lista e adiconar mesangem de item removido
 document.addEventListener("click", (event) => {
   if (event.target.closest(".button-remove-item")) {
     const item = event.target.closest("li");
+    itemText = item.querySelector("p").textContent;
+
     item.classList.remove("item");
     item.classList.add("removed-item");
-    item.innerHTML = `
+    items_list = items_list.filter(text => text !== itemText);
+    messageRemovedItem(item)
+    }  
+});
+
+//adiciona mensagem de item removido
+function messageRemovedItem(item) {
+  item.innerHTML = `
     <img id="removed-img-1" src="/icons/warning-circle-filled.png" alt="ponto de exclamação">
     <p>O item foi removido da lista</p>
     <img id="removed-img-2" src="/icons/delete-small.png" alt="">
   `;
-    setTimeout(() => {
-      item.remove();
-    }, 1000);
-    }  
-});
+
+  item.classList.add("fade-out");
+  
+  setTimeout(() => {
+    item.remove();
+  }, 3000);
+}
+
+//botao de apagar mensagem de item removido
