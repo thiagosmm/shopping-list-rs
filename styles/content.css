@@ -117,10 +117,15 @@
         color: var(--content-secondary);
       }
 
-      img {
-        margin-right: 0.75rem;
-        &:hover {
-          cursor: pointer;
+      button {
+        background: none;
+        border: none;
+
+        img {
+          margin-right: 0.75rem;
+          &:hover {
+            cursor: pointer;
+          }
         }
       }
     }
