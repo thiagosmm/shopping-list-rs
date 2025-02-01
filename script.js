@@ -1,10 +1,11 @@
-//código para funcionamento da lista de compras
+//shopping list code
+
 const input = document.querySelector('input');
 const form = document.querySelector('form');
 const removeItemButton = document.querySelector('li button');
 var items_list = []
 
-//adiciona item a lista
+//adds list item
 form.onsubmit = (event) => {
   event.preventDefault();
 
@@ -34,7 +35,7 @@ form.onsubmit = (event) => {
   input.value = '';
 }
 
-//botão de remover item da lista e adiconar mesangem de item removido
+//remove list item button
 document.addEventListener("click", (event) => {
   if (event.target.closest(".button-remove-item")) {
     const item = event.target.closest("li");
@@ -47,7 +48,7 @@ document.addEventListener("click", (event) => {
     }  
 });
 
-//adiciona mensagem de item removido
+//adds removed item message
 function messageRemovedItem(item) {
   item.innerHTML = `
     <img id="removed-img-1" src="/icons/warning-circle-filled.png" alt="ponto de exclamação">
@@ -55,11 +56,34 @@ function messageRemovedItem(item) {
     <img id="removed-img-2" src="/icons/delete-small.png" alt="">
   `;
 
-  item.classList.add("fade-out");
+  item.classList.add("fade-out-effect");
   
   setTimeout(() => {
     item.remove();
-  }, 3000);
+  }, 2000);
 }
 
-//botao de apagar mensagem de item removido
+//makes item the lists last when checked and move it up when unchecked
+document.addEventListener("change", (event) => {
+  if (event.target.classList.contains("checkbox")) {
+    const item = event.target.closest("li");
+    const ul = document.querySelector("ul");
+
+    if (event.target.checked) {
+      // Move the item to the end of the list (after all checked items)
+      ul.appendChild(item);
+    } else {
+      // Move the item above all checked items
+      const checkedItems = Array.from(ul.children).filter(child => child.querySelector("input.checkbox").checked);
+      const firstCheckedItem = checkedItems[0];
+
+      if (firstCheckedItem) {
+        // If there are checked items, move the current item above the first checked item
+        ul.insertBefore(item, firstCheckedItem);
+      } else {
+        // If there are no checked items, move it to the start of the list
+        ul.prepend(item);
+      }
+    }
+  }
+});
