@@ -22,19 +22,19 @@
     <h1 id="title">Compras da semana</h1>
 
       <form action="">
-        <input type="text" placeholder="Adicione um novo item" id="item">
+        <input type="text" placeholder="Adicione um novo item" id="item" maxlength="27">
         <button type="submit">Adicionar item</button>
       </form>
 
       <ul class="list-items">
 
-        <li class="item">
+        <li class="item hidden">
           <input class="checkbox" type="checkbox">
           <p for="item1">Arroz</p>
           <img class="trash-can-img" src="/icons/icon delete.png" alt="imagem de lixo para deletar item">
         </li>
 
-        <li class="removed-item ">
+        <li class="removed-item hidden">
           <img id="removed-img-1" src="/icons/warning-circle-filled.png" alt="ponto de exclamação">
           <p>O item foi removido da lista</p>
           <img id="removed-img-2" src="/icons/delete-small.png" alt="">
