@@ -22,6 +22,7 @@ form.onsubmit = (event) => {
 
   const item = document.createElement('li');
   item.classList.add("item");
+  input.focus()
 
   item.innerHTML = `
     <input class="checkbox" type="checkbox">
