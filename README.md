@@ -5,7 +5,6 @@ This project is a **shopping list** built with **HTML, CSS, and JavaScript**. It
 ## 📸  
 
 ![Project Screenshot](/screenshot_shopping_list_desktop.png)
-![Project Screenshot](/screenshot_shopping_list_mobile.png)
 
 ## 🚀 Stack  
 
