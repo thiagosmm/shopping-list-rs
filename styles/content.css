@@ -112,7 +112,7 @@
           background: var(--color-brand);
         }
         &:checked:after {
-          content: "✔";
+          content: "X";
           color: var(--always-white);
           display: flex;
           justify-content: center;
